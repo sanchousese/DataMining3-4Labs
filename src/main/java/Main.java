@@ -1,3 +1,4 @@
+import weka.classifiers.functions.IsotonicRegression;
 import weka.classifiers.functions.LinearRegression;
 import weka.classifiers.meta.RegressionByDiscretization;
 import weka.core.Instance;
@@ -17,9 +18,9 @@ public class Main {
         reader.close();
         data.setClassIndex(data.numAttributes() - 1);
 
-
-        LinearRegression model = new LinearRegression();                        //Михалько
+//        LinearRegression model = new LinearRegression();                        //Михалько
 //        RegressionByDiscretization model = new RegressionByDiscretization();  // Круш
+        IsotonicRegression model = new IsotonicRegression();                    //Сутула
 
         model.buildClassifier(data);
 
@@ -28,7 +29,7 @@ public class Main {
 
 //        Instance myBMW = data.lastInstance();
         Instance girl = new Instance(2);
-        girl.setValue(0, 50);
+        girl.setValue(0, 119);
         double purchase = model.classifyInstance(girl);
 
         System.out.println(girl + " " + purchase);
