@@ -31,8 +31,8 @@ def main():
 	
 
 	DATA_TEMPLATE_STR = ("@relation boobsDependingOnIQ\n\n"
-							"@attribute 'boobsSize' {0, 1, 2, 3, 4, 5}\n"
-							"@attribute 'IQ' NUMERIC\n\n"
+							"@attribute 'IQ' {0, 1, 2, 3, 4, 5}\n"
+							"@attribute 'boobsSize' NUMERIC\n\n"
 							"@data\n")
 
 	data = []
@@ -48,15 +48,15 @@ def main():
 	output.write(DATA_TEMPLATE_STR)
 
 	for point in data:
-		output.write(str(point["y"]) + ", " + str(point["x"]) + "\n")
+		output.write(str(point["x"]) + ", " + str(point["y"]) + "\n")
 	
 	output.close()
 
-	# output_for_points = open("data/boobs_points.txt", "w")
-	# for point in data:
-	# 	output_for_points.write("(" + str(point["x"]) + ", " + str(point["y"]) + "), ")
+		# output_for_points = open("data/boobs_points.txt", "w")
+		# for point in data:
+		# 	output_for_points.write("(" + str(point["x"]) + ", " + str(point["y"]) + "), ")
 
-	# output_for_points.close()
+		# output_for_points.close()
 
 
 if __name__ == '__main__':
