@@ -22,7 +22,7 @@ def main():
 	MAX_BOOBS_SIZE = 5
 	MIN_BOOBS_SIZE = 0
 
-	MAX_DEVIATION_AMPLITUDE = 1
+	MAX_DEVIATION_AMPLITUDE = 1.0
 
 	#line equations used: y=ax+b
 	a = (MIN_BOOBS_SIZE - MAX_BOOBS_SIZE) / float(MAX_IQ - MIN_IQ)
@@ -49,8 +49,15 @@ def main():
 
 	for point in data:
 		output.write(str(point["y"]) + ", " + str(point["x"]) + "\n")
-
+	
 	output.close()
+
+	# output_for_points = open("data/boobs_points.txt", "w")
+	# for point in data:
+	# 	output_for_points.write("(" + str(point["x"]) + ", " + str(point["y"]) + "), ")
+
+	# output_for_points.close()
+
 
 if __name__ == '__main__':
 	main()
