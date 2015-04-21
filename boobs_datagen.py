@@ -20,7 +20,7 @@ def main():
 	MAX_IQ = 150
 
 	MAX_BOOBS_SIZE = 5
-	MIN_BOOBS_SIZE = 1
+	MIN_BOOBS_SIZE = 0
 
 	MAX_DEVIATION_AMPLITUDE = 1
 
@@ -33,14 +33,14 @@ def main():
 	DATA_TEMPLATE_STR = ("@relation boobsDependingOnIQ\n\n"
 							"@attribute 'boobsSize' {0, 1, 2, 3, 4, 5}\n"
 							"@attribute 'IQ' NUMERIC\n\n"
-							"@data")
+							"@data\n")
 
 	data = []
 	for i in range(N_POINTS):
-		x = random.uniform(MIN_IQ, MAX_IQ)
+		x = round(random.uniform(MIN_IQ, MAX_IQ))
 		deviation = random.uniform(-MAX_DEVIATION_AMPLITUDE, MAX_DEVIATION_AMPLITUDE)
 		y = normilize_boobs_size(a * x + b + deviation, MIN_BOOBS_SIZE, MAX_BOOBS_SIZE)
-		data.append({"x": x, "y": y})
+		data.append({"x": int(x), "y": int(y)})
 
 
 
