@@ -31,8 +31,8 @@ def main():
 	
 
 	DATA_TEMPLATE_STR = ("@relation boobsDependingOnIQ\n\n"
-							"@attribute 'IQ' {0, 1, 2, 3, 4, 5}\n"
-							"@attribute 'boobsSize' NUMERIC\n\n"
+							"@attribute 'IQ' NUMERIC\n"
+							"@attribute 'boobsSize' {0, 1, 2, 3, 4, 5}\n\n"
 							"@data\n")
 
 	data = []
