@@ -1,7 +1,7 @@
 @relation boobsDependingOnIQ
 
 @attribute 'IQ' NUMERIC
-@attribute 'boobsSize' {0, 1, 2, 3, 4, 5}
+@attribute 'boobsSize' numeric
 
 @data
 111, 3
