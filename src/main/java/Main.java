@@ -19,17 +19,16 @@ public class Main {
         data.setClassIndex(data.numAttributes() - 1);
 
 //        LinearRegression model = new LinearRegression();                        //Михалько
-//        RegressionByDiscretization model = new RegressionByDiscretization();  // Круш
-        IsotonicRegression model = new IsotonicRegression();                    //Сутула
+        RegressionByDiscretization model = new RegressionByDiscretization();  // Круш
+//        IsotonicRegression model = new IsotonicRegression();                    //Сутула
 
         model.buildClassifier(data);
 
         System.out.println(model);
         System.out.println();
 
-//        Instance myBMW = data.lastInstance();
         Instance girl = new Instance(2);
-        girl.setValue(0, 119);
+        girl.setValue(0, 116);
         double purchase = model.classifyInstance(girl);
 
         System.out.println(girl + " " + purchase);
