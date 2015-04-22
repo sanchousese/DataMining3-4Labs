@@ -13,7 +13,7 @@ import java.io.FileReader;
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(
-                new FileReader("../untitled3/data/boobs_dataset_1.arff"));   //Тут змінити на файл з даними
+                new FileReader("data/boobs_dataset_1.arff"));   //Тут змінити на файл з даними
         Instances data = new Instances(reader);
         reader.close();
         data.setClassIndex(data.numAttributes() - 1);
