@@ -1,14 +1,11 @@
 import weka.classifiers.functions.IsotonicRegression;
 import weka.classifiers.functions.LinearRegression;
-import weka.classifiers.functions.SMOreg;
 import weka.classifiers.meta.RegressionByDiscretization;
 import weka.core.Instance;
 import weka.core.Instances;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 
 /**
  * Created by sancho on 21.04.15.
@@ -16,23 +13,25 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(
-                new FileReader("../untitled3/bmw-test.arff"));   //Тут змінити на файл з даними
+                new FileReader("data/boobs_dataset_1.arff"));   //Тут змінити на файл з даними
         Instances data = new Instances(reader);
         reader.close();
-        data.setClassIndex(data.numAttributes() - 2);
+        data.setClassIndex(data.numAttributes() - 1);
 
-
-        LinearRegression model = new LinearRegression();                        //Михалько
-//        RegressionByDiscretization model = new RegressionByDiscretization();   // Круш
+//        LinearRegression model = new LinearRegression();                        //Михалько
+//        RegressionByDiscretization model = new RegressionByDiscretization();  // Круш
+        IsotonicRegression model = new IsotonicRegression();                    //Сутула
 
         model.buildClassifier(data);
 
         System.out.println(model);
+        System.out.println();
 
-        Instance myBMW = data.lastInstance();
-        double purchase = model.classifyInstance(myBMW);
+        Instance girl = new Instance(2);
+        girl.setValue(0, 116);
+        double purchase = model.classifyInstance(girl);
 
-        System.out.println(myBMW + " " + purchase);
+        System.out.println(girl + " " + purchase);
 
     }
 }
