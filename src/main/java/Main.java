@@ -19,8 +19,8 @@ public class Main {
         data.setClassIndex(data.numAttributes() - 1);
 
 //        LinearRegression model = new LinearRegression();                        //Михалько
-        RegressionByDiscretization model = new RegressionByDiscretization();  // Круш
-//        IsotonicRegression model = new IsotonicRegression();                    //Сутула
+//        RegressionByDiscretization model = new RegressionByDiscretization();  // Круш
+        IsotonicRegression model = new IsotonicRegression();                    //Сутула
 
         model.buildClassifier(data);
 
