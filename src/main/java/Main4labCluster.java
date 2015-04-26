@@ -1,5 +1,6 @@
 import weka.classifiers.trees.J48graft;
 import weka.clusterers.FarthestFirst;
+import weka.clusterers.HierarchicalClusterer;
 import weka.core.Instances;
 
 import java.io.BufferedReader;
@@ -15,7 +16,8 @@ public class Main4labCluster {
         Instances data = new Instances(reader);
         reader.close();
 
-        FarthestFirst model = new FarthestFirst();
+        FarthestFirst model = new FarthestFirst()               // Сутула
+//        HierarchicalClusterer model = new HierarchicalClusterer();// Круш
 
         model.buildClusterer(data);
 
