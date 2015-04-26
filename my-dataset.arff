@@ -1,7 +1,0 @@
-@relation bmwreponses
-
-@attribute BoobsSize numeric
-@attribute IQ numeric
-
-@data
-
