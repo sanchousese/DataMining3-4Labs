@@ -10,7 +10,7 @@ import java.io.FileReader;
 /**
  * Created by sancho on 21.04.15.
  */
-public class Main {
+public class Main3lab {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(
                 new FileReader("data/boobs_dataset_1.arff"));   //Тут змінити на файл з даними
