@@ -16,8 +16,8 @@ public class Main4labCluster {
         Instances data = new Instances(reader);
         reader.close();
 
-        FarthestFirst model = new FarthestFirst()               // Сутула
-//        HierarchicalClusterer model = new HierarchicalClusterer();// Круш
+        FarthestFirst model = new FarthestFirst();                      // Сутула, Михалько
+//        HierarchicalClusterer model = new HierarchicalClusterer();      // Круш
 
         model.buildClusterer(data);
 
