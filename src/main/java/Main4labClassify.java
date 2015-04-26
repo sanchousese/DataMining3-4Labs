@@ -9,7 +9,7 @@ import java.io.FileReader;
 /**
  * Created by sancho on 26.04.15.
  */
-public class Main4lab {
+public class Main4labClassify {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(
                 new FileReader("data/boobs_dataset_for_trees.arff"));   // Тут змінити на файл з даними
